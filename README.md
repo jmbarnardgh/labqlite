@@ -2,8 +2,6 @@
 
 The object-oriented SQLite library for iOS that **eliminates low- *and* mid-level boilerplate**.
 
-## Show me!
-
 ## What is it?
 Unlike basic wrappers around SQLite, *LabQLite* takes care of both low- *and* mid-level boilerplate code, getting you right on up to the OO level from the start!
 
