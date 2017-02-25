@@ -2,29 +2,12 @@
 
 The object-oriented SQLite library for iOS that **eliminates low- *and* mid-level boilerplate**.
 
+## Show me!
+
 ## What is it?
 Unlike basic wrappers around SQLite, *LabQLite* takes care of both low- *and* mid-level boilerplate code, getting you right on up to the OO level from the start!
 
-## Show me!
-
-
-
-## How does it work?
-### Overview
-
-Generally speaking...
-
-1. Generate model classes by using a provided bash script to analyze a valid SQLite 3 database.
-1. *Drag-n-drop* the generated model class files into your Xcode project.
-1. *Drag-n-drop* your SQLite 3 database into your Xcode project.
-1. Add the LabQLite source to the Xcode project (there are various ways to do this).
-1. Write basic setup code to connect to your SQLite 3 database via LabQLite.
-
-For smaller database models, the above process takes about 10 to 20 minutes.
-
-That's it! Now you can command your tables and views by means of handy classes, CRUD control included for free!
-
-### How To?
+## How To?
 #### 1. Ensure you have the ingredients.
 - a valid SQLite 3 database file (built using SQLite 3.14.0... but earlier versions of SQLite 3 will probably work as well)
 - Xcode 7 or later
@@ -51,7 +34,7 @@ LabQLite files:
   - `LabQLiteConstants.h`
   - `LabQLiteRowMappable.h`
 
-SQLite files:
+SQLite files (downloading amalgamation from [sqlite.org](https://sqlite.org/download.html) is easiest in my opinion):
   - `sqlite3.h`
   - `sqlite3.c`
   - `sqlite3ext.h`
@@ -60,6 +43,21 @@ SQLite files:
 #### 6. Write basic setup code.
 
 #### 7. Take command of your models!
+
+## How does it work?
+### Overview
+
+Generally speaking...
+
+1. Generate model classes by using [LabQLite Model Generator](https://github.com/jmbarnardgh/labqlite_model_generator) to analyze a valid SQLite 3 database.
+1. *Drag-n-drop* the generated model class files into your Xcode project.
+1. *Drag-n-drop* your SQLite 3 database into your Xcode project.
+1. Add the LabQLite source to the Xcode project (there are various ways to do this).
+1. Write basic setup code to connect to your SQLite 3 database via LabQLite.
+
+For smaller database models, the above process takes about 10 to 20 minutes.
+
+That's it! Now you can command your tables and views by means of handy classes, CRUD control included for free!
 
 ## Features
 
