@@ -1,9 +1,13 @@
-![LabQLite](labqlite_logo_and_title.png "LabQLite")
+![LabQLite](README/img/labqlite_logo_and_title.png "LabQLite")
 
 The object-oriented SQLite library for iOS that **eliminates low- *and* mid-level boilerplate**.
 
 ## What is it?
 Unlike basic wrappers around SQLite, *LabQLite* takes care of both low- *and* mid-level boilerplate code, getting you right on up to the OO level from the start!
+
+## Show me!
+
+
 
 ## How does it work?
 ### Overview
@@ -20,12 +24,12 @@ For smaller database models, the above process takes about 10 to 20 minutes.
 
 That's it! Now you can command your tables and views by means of handy classes, CRUD control included for free!
 
-### Detailed Setup Process
+### How To?
 #### 1. Ensure you have the ingredients.
 - a valid SQLite 3 database file (built using SQLite 3.14.0... but earlier versions of SQLite 3 will probably work as well)
 - Xcode 7 or later
 - an iOS app (building for iOS 9 or later)
-- an installation of GNU bash 3.2.57 (or thereabouts...) if you want to use the model generator
+- an installation of GNU bash 3.2.57 (or thereabouts...) if you want to use the [model generator](https://github.com/jmbarnardgh/labqlite_model_generator)
 
 #### 2. Generate model classes from your SQLite 3 database file.
 Visit the cousin repository to this one located here and follow the `README` in order to generate class files from tables and views from your valid SQLite 3 database file.
@@ -48,7 +52,6 @@ LabQLite files:
   - `LabQLiteRowMappable.h`
 
 SQLite files:
-  - `shell.c`
   - `sqlite3.h`
   - `sqlite3.c`
   - `sqlite3ext.h`
@@ -56,10 +59,12 @@ SQLite files:
 
 #### 6. Write basic setup code.
 
+#### 7. Take command of your models!
+
 ## Features
 
 ### Full CRUD capabilities for generated model classes; no CRUD implementation messiness in your generated model class files.
-To keep *your* code base as DRY as possible, LabQLite's cousin repository (LabQLite Model Generator) spits out classes that:
+To keep *your* code base as DRY as possible, LabQLite's cousin repository ([LabQLite Model Generator](https://github.com/jmbarnardgh/labqlite_model_generator)) spits out classes that:
   - are compatible with the LabQLite library
   - inherit all of their basic CRUD powers from the `LabQLiteRow` superclass; "no assembly required"
 
@@ -115,6 +120,8 @@ LabQLite:
 ## Testing
 LabQLite has exactly 100 unit tests backing it at this point. A mild start, but every major player within the library has tests for it, and some have several scenarios covered. Tests will continue to be developed as opportunities and/or needs arise.
 
+![LabQLite](README/img/LabQLiteTests.gif "LabQLite")
+
 
 ## Back-story
 Having used SQLite 3 to build iOS apps in the past, I found it extremely painful to write boilerplate code. Even if able to bypass the initial boilerplate (perhaps with a simple wrapper or some code snippets), I still had to write what I call the "mid-level boilerplate" (writing model classes, database manager class, proxies, etc.) which takes just as long if not longer. LabQLite at its core is a mitigation against the aforementioned inconveniences.
@@ -150,7 +157,7 @@ However you use LabQLite, please use it according to the words of the author of 
   > Dr. Richard Hipp, creator of SQLite
 
 ## Licensing
-![Public Domain](public_domain_logo.png "Public Domain")
+![Public Domain](README/img/public_domain_logo.png "Public Domain")
 
 **LabQLite** is in the Public Domain. See the `LICENSE` file in the root directory of this repository.
 
