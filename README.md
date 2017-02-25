@@ -42,10 +42,7 @@ SQLite files (downloading amalgamation from [sqlite.org](https://sqlite.org/down
 
 #### 7. Take command of your models!
 
-## How does it work?
-### Overview
-
-Generally speaking...
+## To recap...
 
 1. Generate model classes by using [LabQLite Model Generator](https://github.com/jmbarnardgh/labqlite_model_generator) to analyze a valid SQLite 3 database.
 1. *Drag-n-drop* the generated model class files into your Xcode project.
@@ -68,11 +65,15 @@ To keep *your* code base as DRY as possible, LabQLite's cousin repository ([LabQ
 Nearly every CRUD method for your generated model classes has a block-based counterpart.
 
 ##### Example:
-`- (BOOL)insertSelf:(NSError **)error;`
+```objective-c
+- (BOOL)insertSelf:(NSError **)error;
+```
 
 has counterpart method
 
-`- (void)insertSelfWithCompletionBlock:(void(^)(BOOL success, NSError *error))completion;`
+```objective-c
+- (void)insertSelfWithCompletionBlock:(void(^)(BOOL success, NSError *error))completion;
+```
 
 ### Robust Error Handling
 Every single CRUD method that your generated model classes can inherit has a double-indirection `NSError` pointer with which you can capture any low-level (at the SQLite library level) or higher-level (at the LabQLite library level) error.
