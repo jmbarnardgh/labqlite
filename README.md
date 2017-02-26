@@ -12,16 +12,7 @@ Unlike basic wrappers around SQLite, *LabQLite* takes care of both low- *and* mi
 - an iOS app (building for iOS 9 or later)
 - an installation of GNU bash 3.2.57 (or thereabouts...) if you want to use the [model generator](https://github.com/jmbarnardgh/labqlite_model_generator)
 
-#### 2. Generate model classes from your SQLite 3 database file.
-Visit the cousin repository to this one located here and follow the `README` in order to generate class files from tables and views from your valid SQLite 3 database file.
-
-#### 3. Drop your class files into your project.
-Drag-n-drop your generated model classes into your Xcode project.
-
-#### 4. Add your SQLite 3 database file to your iOS app.
-Drag-n-drop your SQLite 3 database file into your Xcode project.
-
-#### 5. Add LabQLite and SQLite library files to your project.
+#### 2. Add LabQLite and SQLite library files to your project.
 LabQLite files:
   - `LabQLite.h`
   - `LabQLiteRow.h` and `LabQLiteRow.m`
@@ -32,13 +23,34 @@ LabQLite files:
   - `LabQLiteConstants.h`
   - `LabQLiteRowMappable.h`
 
+![Drag-n-Drop In LabQLite Source Code](README/img/drag_n_drop_labqlite_src.gif "Drag-n-Drop In LabQLite Source Code")
+
 SQLite files (downloading amalgamation from [sqlite.org](https://sqlite.org/download.html) is easiest in my opinion):
   - `sqlite3.h`
   - `sqlite3.c`
   - `sqlite3ext.h`
 
+#### 3. Add your SQLite 3 database file to your iOS app.
+Drag-n-drop your SQLite 3 database file into your Xcode project.
+![Drag-n-Drop In LabQLite Source Code](README/img/drag_n_drop_in_sqlite3_db.gif "Drag-n-Drop In LabQLite Source Code")
 
-#### 6. Write basic setup code.
+#### 4. Write basic setup code.
+![Write Basic Setup Code](README/img/basic_setup_code.gif "Write Basic Setup Code")
+
+```objective-c
+#import "LabQLite.h"
+```
+
+```objective-c
+NSError *error;
+[LabQLiteDatabaseController activateSharedControllerWithFileFromLocalBundle:@"my_sqlite_3_database.sqlite3" toBeCopiedToAndUsedFromDirectory:@"" assumingNSDocumentDirectoryAsRootPath:YES overwrite:NO error:&error];
+```
+
+#### 5. Generate model classes from your SQLite 3 database file.
+Visit the [model generator repository](https://github.com/jmbarnardgh/labqlite_model_generator) and follow the `README` in order to generate class files from the tables and views within your valid SQLite 3 database file.
+
+#### 6. Drop your class files into your project.
+Drag-n-drop your generated model classes into your Xcode project.
 
 #### 7. Take command of your models!
 
