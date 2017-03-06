@@ -518,7 +518,7 @@ NSString *const LabQLiteErrorMessageColumnsCountDidNotMatchValuesCount = @"The n
 }
 
 + (NSString *)errorMessageForCode:(int)errorCode {
-    return [SQLITE_LOW_LVL_MSGS_ARRAY objectAtIndex:errorCode];
+    return [[LabQLiteConstants SQLITE_LOW_LVL_MSGS_ARRAY] objectAtIndex:errorCode];
 }
 
 - (NSString *)insertionStatementFromSQLite3RowMappable:(id <LabQLiteRowMappable>)rowMappable {

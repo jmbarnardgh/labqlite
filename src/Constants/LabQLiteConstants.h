@@ -28,22 +28,25 @@ For more information, please refer to <http://unlicense.org>
 
 @import Foundation;
 
-@interface LabQLiteConstants : NSObject {}
+@interface LabQLiteConstants : NSObject
+
++ (NSArray *)SQLITE_LOW_LVL_MSGS_ARRAY;
+
 @end
 
 typedef NSString SQLite3LogicalOperator;
-#define SQLite3LogicalOperatorAND   @"AND"
-#define SQLite3LogicalOperatorOR    @"OR"
-#define SQLite3LogicalOperatorNOT   @"NOT"
+extern NSString * const SQLite3LogicalOperatorAND;   
+extern NSString * const SQLite3LogicalOperatorOR;    
+extern NSString * const SQLite3LogicalOperatorNOT;
 
 typedef NSString SQLite3BinaryOperator;
-#define SQLite3BinaryOperatorEquals     @"="
-#define SQLite3BinaryOperatorNotEquals  @"!="
-#define SQLite3BinaryOperatorLike       @"LIKE"
+extern NSString * const SQLite3BinaryOperatorEquals;     
+extern NSString * const SQLite3BinaryOperatorNotEquals;  
+extern NSString * const SQLite3BinaryOperatorLike;       
 
 
 
-#define SQLITE3_LOW_LEVEL_ERROR_DOMAIN @"SQLITE3_LOW_LEVEL_ERROR_DOMAIN"
+extern NSString * const SQLITE3_LOW_LEVEL_ERROR_DOMAIN;
 /**
  @discussion Codes can be found in the low level src in sqlite3.h.
  The following is merely a way to objective-c-afy these codes so
@@ -53,78 +56,48 @@ typedef NSString SQLite3BinaryOperator;
  by sqlite3.c print calls.
  */
 
-//  corresponding #define message       the message as NSString literal                                         corresponding code
-//  -------------------------------     -----------------------------------------------                         ---------------------
-#define SQLITE_0_NO_ERROR             @"No error."                                                        //  corresponds to code  0
-#define SQLITE_1_ERROR_Message        @"SQL error or missing database."                                   //  corresponds to code  1
-#define SQLITE_2_INTERNAL_Message     @"Internal logic error in SQLite."                                  //  corresponds to code  2
-#define SQLITE_3_PERM_Messsage        @"Access permission to database denied."                            //  corresponds to code  3
-#define SQLITE_4_ABORT_Message        @"Callback routine requested an abort."                             //  corresponds to code  4
-#define SQLITE_5_BUSY_Message         @"The database file is locked."                                     //  corresponds to code  5
-#define SQLITE_6_LOCKED_Message       @"A table in the database is locked."                               //  corresponds to code  6
-#define SQLITE_7_NOMEM_Message        @"A malloc() failed."                                               //  corresponds to code  7
-#define SQLITE_8_READONLY_Message     @"Attempt to write a readonly database."                            //  corresponds to code  8
-#define SQLITE_9_INTERRUPT_Message    @"Operation terminated by sqlite3_interrupt()."                     //  corresponds to code  9
-#define SQLITE_10_IOERR_Message       @"Some kind of disk I/O error occurred."                            //  corresponds to code 10
-#define SQLITE_11_CORRUPT_Message     @"The database disk image is malformed."                            //  corresponds to code 11
-#define SQLITE_12_NOTFOUND_Message    @"Unknown opcode in sqlite3_file_control()."                        //  corresponds to code 12
-#define SQLITE_13_FULL_Message        @"Insertion failed because database is full."                       //  corresponds to code 13
-#define SQLITE_14_CANTOPEN_Message    @"Unable to open the database file."                                //  corresponds to code 14
-#define SQLITE_15_PROTOCOL_Message    @"Database lock protocol error."                                    //  corresponds to code 15
-#define SQLITE_16_EMPTY_Message       @"Database is empty."                                               //  corresponds to code 16
-#define SQLITE_17_SCHEMA_Message      @"The database schema changed."                                     //  corresponds to code 17
-#define SQLITE_18_TOOBIG_Message      @"String or BLOB exceeds size limit."                               //  corresponds to code 18
-#define SQLITE_19_CONSTRAINT_Message  @"Abort due to constraint violation."                               //  corresponds to code 19
-#define SQLITE_20_MISMATCH_Message    @"Data type mismatch."                                              //  corresponds to code 20
-#define SQLITE_21_MISUSE_Message      @"Library used incorrectly."                                        //  corresponds to code 21
-#define SQLITE_22_NOLFS_Message       @"Uses OS features not supported on host."                          //  corresponds to code 22
-#define SQLITE_23_AUTH_Message        @"Authorization denied."                                            //  corresponds to code 23
-#define SQLITE_24_FORMAT_Message      @"Auxiliary database format error."                                 //  corresponds to code 24
-#define SQLITE_25_RANGE_Message       @"2nd parameter to sqlite3_bind out of range."                      //  corresponds to code 25
-#define SQLITE_26_NOTADB_Message      @"File opened that is not a database file."                         //  corresponds to code 26
+//  corresponding extern NSString * const message     corresponding code
+//  -------------------------------                   ---------------------
+extern NSString * const SQLITE_0_NO_ERROR;             //  corresponds to code  0
+extern NSString * const SQLITE_1_ERROR_Message;        //  corresponds to code  1
+extern NSString * const SQLITE_2_INTERNAL_Message;     //  corresponds to code  2
+extern NSString * const SQLITE_3_PERM_Message;        //  corresponds to code  3
+extern NSString * const SQLITE_4_ABORT_Message;        //  corresponds to code  4
+extern NSString * const SQLITE_5_BUSY_Message;         //  corresponds to code  5
+extern NSString * const SQLITE_6_LOCKED_Message;       //  corresponds to code  6
+extern NSString * const SQLITE_7_NOMEM_Message;        //  corresponds to code  7
+extern NSString * const SQLITE_8_READONLY_Message;     //  corresponds to code  8
+extern NSString * const SQLITE_9_INTERRUPT_Message;    //  corresponds to code  9
+extern NSString * const SQLITE_10_IOERR_Message;       //  corresponds to code 10
+extern NSString * const SQLITE_11_CORRUPT_Message;     //  corresponds to code 11
+extern NSString * const SQLITE_12_NOTFOUND_Message;    //  corresponds to code 12
+extern NSString * const SQLITE_13_FULL_Message;        //  corresponds to code 13
+extern NSString * const SQLITE_14_CANTOPEN_Message;    //  corresponds to code 14
+extern NSString * const SQLITE_15_PROTOCOL_Message;    //  corresponds to code 15
+extern NSString * const SQLITE_16_EMPTY_Message;       //  corresponds to code 16
+extern NSString * const SQLITE_17_SCHEMA_Message;      //  corresponds to code 17
+extern NSString * const SQLITE_18_TOOBIG_Message;      //  corresponds to code 18
+extern NSString * const SQLITE_19_CONSTRAINT_Message;  //  corresponds to code 19
+extern NSString * const SQLITE_20_MISMATCH_Message;    //  corresponds to code 20
+extern NSString * const SQLITE_21_MISUSE_Message;      //  corresponds to code 21
+extern NSString * const SQLITE_22_NOLFS_Message;       //  corresponds to code 22
+extern NSString * const SQLITE_23_AUTH_Message;        //  corresponds to code 23
+extern NSString * const SQLITE_24_FORMAT_Message;      //  corresponds to code 24
+extern NSString * const SQLITE_25_RANGE_Message;       //  corresponds to code 25
+extern NSString * const SQLITE_26_NOTADB_Message;      //  corresponds to code 26
 
 // Processing Messages
-#define SQLITE_27_ROW_Message         @"qlite3_step() has another row ready."                             //  corresponds to code 27
-#define SQLITE_28_DONE_Message        @"sqlite3_step() has finished executing."                           //  corresponds to code 28
+extern NSString * const SQLITE_27_ROW_Message;         //  corresponds to code 27
+extern NSString * const SQLITE_28_DONE_Message;        //  corresponds to code 28
 
-#define SQLITE_LOW_LVL_MSGS_ARRAY       @[\
-    SQLITE_0_NO_ERROR,\
-    SQLITE_1_ERROR_Message,\
-    SQLITE_2_INTERNAL_Message,\
-    SQLITE_3_PERM_Messsage,\
-    SQLITE_4_ABORT_Message,\
-    SQLITE_5_BUSY_Message,\
-    SQLITE_6_LOCKED_Message,\
-    SQLITE_7_NOMEM_Message,\
-    SQLITE_8_READONLY_Message,\
-    SQLITE_9_INTERRUPT_Message,\
-    SQLITE_10_IOERR_Message,\
-    SQLITE_11_CORRUPT_Message,\
-    SQLITE_12_NOTFOUND_Message,\
-    SQLITE_13_FULL_Message,\
-    SQLITE_14_CANTOPEN_Message,\
-    SQLITE_15_PROTOCOL_Message,\
-    SQLITE_16_EMPTY_Message,\
-    SQLITE_17_SCHEMA_Message,\
-    SQLITE_18_TOOBIG_Message,\
-    SQLITE_19_CONSTRAINT_Message,\
-    SQLITE_20_MISMATCH_Message,\
-    SQLITE_21_MISUSE_Message,\
-    SQLITE_22_NOLFS_Message,\
-    SQLITE_23_AUTH_Message,\
-    SQLITE_24_FORMAT_Message,\
-    SQLITE_25_RANGE_Message,\
-    SQLITE_26_NOTADB_Message,\
-    SQLITE_27_ROW_Message,\
-    SQLITE_28_DONE_Message\
-]
+extern NSString * const SQLITE_LOW_LVL_MSGS_ARRAY;
 
-#define kOpennedDatabaseSuccessfully @"Database openned."
-#define kClosedDatabaseSuccessfully @"Database closed."
-#define kFailedToOpenDatabase @"SQLite3Wrapper could not open database."
-#define kFailedToCloseDatabase @"SQLite3Wrapper could not close database."
-#define kConstraintFailed @"constraint failed"
+extern NSString * const kOpennedDatabaseSuccessfully;
+extern NSString * const kClosedDatabaseSuccessfully;
+extern NSString * const kFailedToOpenDatabase;
+extern NSString * const kFailedToCloseDatabase;
+extern NSString * const kConstraintFailed;
 
 
-#define LABQLITE_WRAPPER_SELECT_LIMIT_NONE -1
+extern int const LABQLITE_WRAPPER_SELECT_LIMIT_NONE;
 
