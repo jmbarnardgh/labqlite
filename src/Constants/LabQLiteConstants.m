@@ -1,11 +1,3 @@
-//
-//  LabQLiteConstants.m
-//  LabQLite
-//
-//  Created by Jacob Barnard on 3/6/17.
-//  Copyright © 2017 LABITORY LLC. All rights reserved.
-//
-
 /**
  This is free and unencumbered software released into the public domain.
  
