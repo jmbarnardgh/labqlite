@@ -74,7 +74,7 @@ For more information, please refer to <http://unlicense.org>
  bindable values must have a value which is bindable according
  to the affinity type provided at index i of affinityTypes.
  
- @param bindableVaues The values in NSString, NSNumber or NSDate
+ @param bindableValues The values in NSString, NSNumber or NSDate
  form to be bound to the provided low-level sqlite3_stmt.
  
  @param affinityTypes The SQLite affinity types according to

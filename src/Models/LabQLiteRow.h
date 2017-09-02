@@ -214,8 +214,6 @@ FOUNDATION_EXPORT NSString *const LabQLiteRowErrorMessageObjectPropertyOrKeyNotF
  be nil but will contain errors encountered as a result
  of the failed insertion attempt
  
- @return whether or not all insertions were successful
- 
  @see LabQLiteDatabaseController
  
  @see [LabQLiteDatabaseController sharedDatabaseController]
@@ -317,7 +315,7 @@ FOUNDATION_EXPORT NSString *const LabQLiteRowErrorMessageObjectPropertyOrKeyNotF
  of rows to be returned (and thus objects to
  be returned by this method)
  
- @param sortProperty the SQL table column (and thus
+ @param columnName the SQL table column (and thus
  class object property) by which to sort the
  returned rows (sorting done at the SQLite3 level)
  
@@ -475,9 +473,7 @@ FOUNDATION_EXPORT NSString *const LabQLiteRowErrorMessageObjectPropertyOrKeyNotF
  
     Ensure you use the newRowObject as your reference
     after that.
- 
- @return whether or not the UPDATE was successful
- 
+  
  @see LabQLiteDatabaseController
  
  @see SQLiteRowMappable

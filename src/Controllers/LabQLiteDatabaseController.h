@@ -269,7 +269,7 @@ For more information, please refer to <http://unlicense.org>
 /**
  @abstract Initializes an LabQLiteDatabaseController and returns it.
  
- @param databasePath The path to the low-level sqlite3 database file.
+ @param sourceDatabaseFile The path to the low-level sqlite3 database file.
  
  @param error The standard error capturing double indirection pointer.
  
@@ -288,7 +288,18 @@ For more information, please refer to <http://unlicense.org>
  
  DO NOT PUT A TRAILING SLASH AT THE END IN THE path PARAMTER.
  
- @param databasePath The path to the low-level sqlite3 database file.
+ @param fileName The file name at the end of the path for where the
+ SQLite database is to be stored.
+ 
+ @param path The path leading up to where the SQLite database is to be
+ stored.
+ 
+ @param assumedNSDocumentDirectoryAsRootPath When set to true, will
+ trigger that the `path` parameter is prepended with the NSDocumentDirectory
+ path.
+ 
+ @param overwrite Whether or not to overwrite the file at `path/filename`
+ with the file in the bundle named `fileName`.
  
  @param error The standard error capturing double indirection pointer.
  
@@ -475,10 +486,7 @@ For more information, please refer to <http://unlicense.org>
  
  @param tableName The name of the table into which
  the rows will be inserted.
- 
- @param error The standard error capturing double
- indirection pointer.
- 
+  
  @param completion Completion block which is executed
  at the end of the insertion attempt. The `success`
  BOOL lets you know whether the insertion was indeed
@@ -494,7 +502,7 @@ For more information, please refer to <http://unlicense.org>
 
  @param tableName the name of the table from which to delete data
  
- @param logicalComponents an array of SQLite3Stipulations
+ @param stipulations an array of SQLite3Stipulations
  
  @return whether or not the deletion was successful
  */
@@ -518,13 +526,13 @@ For more information, please refer to <http://unlicense.org>
                        error:(NSError **)error;
 
 /**
- @abstract 
+ @abstract Updates the first row object with the second row
+ object's values.
  
- @param tableName the name of the table from which to delete data
+ @param rowObject The row object to be updated.
  
- @param attributeName the attribute whose value is being updated
- 
- @param newValue the new value to which the attribute is being set
+ @param newRowObject The row object whose values will be
+ applied to the first row object.
  
  @return an array of messages from the database (expected 1 confirmation message)
  */

@@ -119,10 +119,10 @@ FOUNDATION_EXPORT NSString *const LabQLiteErrorMessageColumnsCountDidNotMatchVal
  @param columnAffinityTypes Those column affinity types which
  correspond to the bindable values (ordered respectively).
  
- @param openDatabase Whether or not to open the sqlite3
+ @param shouldOpenDatabase Whether or not to open the sqlite3
  low-level database file.
  
- @param closeDatabase Whether or not to close the sqlite3
+ @param shouldCloseDatabase Whether or not to close the sqlite3
  low-level database file.
  
  @param error Standard error-capturing double
