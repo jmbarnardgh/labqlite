@@ -12,7 +12,7 @@ Unlike basic wrappers around SQLite, *LabQLite* takes care of both low- *and* mi
 - an iOS app (building for iOS 9 or later)
 - an installation of GNU bash 3.2.57 (or thereabouts...) if you want to use the [model generator](https://github.com/jmbarnardgh/labqlite_model_generator)
 
-#### 2. Add LabQLite and SQLite library files to your project.
+#### 2. Add LabQLite files to your project.
 LabQLite files:
   - `LabQLite.h`
   - `LabQLiteRow.h` and `LabQLiteRow.m`
@@ -25,10 +25,19 @@ LabQLite files:
 
 ![Drag-n-Drop In LabQLite Source Code](README/img/drag_n_drop_labqlite_src.gif "Drag-n-Drop In LabQLite Source Code")
 
-SQLite files (downloading amalgamation from [sqlite.org](https://sqlite.org/download.html) is easiest in my opinion):
-  - `sqlite3.h`
-  - `sqlite3.c`
-  - `sqlite3ext.h`
+#### 3. Link Binary with Libraries to `libsqlite3.tbd`
+
+<kbd>
+![Link Binary with Libraries](README/img/link_binary_with_libraries_bare.png "Link Binary with Libraries")
+</kbd>
+
+<kbd>
+![Pick libsqlite3.tbd](README/img/libsqlite3_dot_tbd_selection.png "Pick libsqlite3.tbd")
+</kbd>
+
+<kbd>
+![libsqlite3.tbd Added](README/img/libsqlite3_added.png "libsqlite3.tbd Added")
+</kbd>
 
 #### 3. Add your SQLite 3 database file to your iOS app.
 Drag-n-drop your SQLite 3 database file into your Xcode project.
