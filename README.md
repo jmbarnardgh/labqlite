@@ -27,17 +27,12 @@ LabQLite files:
 
 #### 3. Link Binary with Libraries to `libsqlite3.tbd`
 
-<kbd>
 ![Link Binary with Libraries](README/img/link_binary_with_libraries_bare.png "Link Binary with Libraries")
-</kbd>
 
-<kbd>
 ![Pick libsqlite3.tbd](README/img/libsqlite3_dot_tbd_selection.png "Pick libsqlite3.tbd")
-</kbd>
 
-<kbd>
 ![libsqlite3.tbd Added](README/img/libsqlite3_added.png "libsqlite3.tbd Added")
-</kbd>
+
 
 #### 3. Add your SQLite 3 database file to your iOS app.
 Drag-n-drop your SQLite 3 database file into your Xcode project.
