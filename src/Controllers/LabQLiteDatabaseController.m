@@ -399,21 +399,25 @@ assumingNSDocumentDirectoryAsRootPath:(BOOL)assumedNSDocumentDirectoryAsRootPath
                     return nil;
                 }
             }
-            
+
+            // If no current database file exists and we don't want to
+            // overwrite, that's okay. We can create a new file... because
+            // that is NOT considered overwriting.
+
             // If the file does not exist, and we want to overwrite,
             // that's fine. It's like creating a new file anyway.
-            else if ((!fileExists && overwrite) || (!fileExists && !overwrite)) {
+            else if (!fileExists) {
                 BOOL createdPathway = [fileManager createDirectoryAtPath:pathway
                                              withIntermediateDirectories:YES
                                                               attributes:nil
                                                                    error:error];
                 if (!createdPathway) return nil;
-                else {
-                    _databasePath = [[NSString alloc] initWithString:writeableDBPath];
-                    _database = [[LabQLiteDatabase alloc] initWithPath:_databasePath error:error];
-                    if (!_database) {
-                        return nil;
-                    }
+                BOOL successfulCopy = [fileManager copyItemAtPath:bundlePath toPath:writeableDBPath error:error];
+                if (!successfulCopy) return nil;
+                _databasePath = [[NSString alloc] initWithString:writeableDBPath];
+                _database = [[LabQLiteDatabase alloc] initWithPath:_databasePath error:error];
+                if (!_database) {
+                    return nil;
                 }
             }
             
