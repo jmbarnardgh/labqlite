@@ -999,7 +999,7 @@ assumingNSDocumentDirectoryAsRootPath:(BOOL)assumedNSDocumentDirectoryAsRootPath
                      error:error];
     
     // Return whether or not the update was successful
-    if (!error) return YES;
+    if (*error == nil) return YES;
     return NO;
 }
 
